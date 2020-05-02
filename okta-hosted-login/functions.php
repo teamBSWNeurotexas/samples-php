@@ -53,7 +53,11 @@ function verifyJwt($jwt)
             ->setClientId(getenv('CLIENT_ID'))
             ->build();
 
-        return $jwtVerifier->verify($jwt);
+        try {
+          return $jwtVerifier->verify($jwt);
+        } catch (\Exception $e) {
+          echo $e;
+        }
     } catch (\Exception $e) {
         return false;
     }
