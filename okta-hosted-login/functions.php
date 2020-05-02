@@ -56,7 +56,7 @@ function verifyJwt($jwt)
         try {
           return $jwtVerifier->verify($jwt);
         } catch (\Exception $e) {
-          echo $e;
+          echo "Error for Okta-Hosted is: ". $e;
         }
     } catch (\Exception $e) {
         return false;
