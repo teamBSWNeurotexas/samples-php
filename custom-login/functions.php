@@ -56,7 +56,7 @@ function verifyJwt($jwt)
         try {
           return $jwtVerifier->verify($jwt);
         } catch (\Exception $e) {
-          echo "Error is: ". $e;
+          echo "Error for Custom Login is: ". $e;
         }
     } catch (\Exception $e) {
         return false;
